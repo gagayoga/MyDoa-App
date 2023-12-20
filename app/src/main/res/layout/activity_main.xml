@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_weight="1"
+        android:background="@color/primary"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Selamat Datang"
+            android:textColor="@color/white"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            android:lineSpacingExtra="10dp"
+            android:text="Tuntun Langkahmu, Temukan Ketenangan: Doa Harian untuk Hidup Muslim yang Penuh Berkah"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/round">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_above="@id/loginButton"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/Loginn"
+                    android:layout_above="@id/layoutuser"
+                    android:textAlignment="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:textSize="35sp"
+                    android:text="Login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tologin"
+                    android:layout_above="@id/layoutuser"
+                    android:textAlignment="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="Login sekarang untuk mengakses program ini."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutuser"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_above="@id/layoutpass"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="40dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:startIconDrawable="@drawable/ic_user_foreground"
+                    app:errorEnabled="true"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/usernameEditText"
+                        android:textSize="15sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Username" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutpass"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_above="@id/loginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    android:layout_marginTop="8dp"
+                    app:startIconDrawable="@drawable/ic_password_foreground"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwordEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:hint="@string/password_hint"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_above="@id/layoutDontAccount"
+                android:id="@+id/loginButton"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:padding="15dp"
+                app:cornerRadius="10dp"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primary"
+                android:text="@string/button_login" />
+
+            <RelativeLayout
+                android:layout_marginBottom="10dp"
+                android:id="@+id/layoutDontAccount"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+
+                <TextView
+                    android:id="@+id/textDont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:text="Belum punya akun?"
+                    android:gravity="center_vertical|center"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/textRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_marginStart="8dp"
+                    android:layout_alignTop="@id/textDont"
+                    android:layout_toEndOf="@+id/textDont"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:text="Daftar Sekarang"
+                    android:gravity="center_vertical|left"
+                    android:textColor="@color/primary"/>
+            </RelativeLayout>
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/textRegister"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="14dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textAlignment="center"-->
+<!--                android:text="Do you not have account?? Regsiter"/>-->
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

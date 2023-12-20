@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyDoaApp</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="button_login">Login</string>
+    <string name="juduldashb">Aplikasi ini merupakan project akhir dari program ASM.Ini merupakan tugas dari kelompok kami</string>
+    <string name="login">Do you not have account?? Regsiter</string>
+    <string name="judulonboarding">Looking for news</string>
+    <string name="jdul2onboarding">Read news here wrote</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps_masjid">MapsMasjid</string>
+</resources>

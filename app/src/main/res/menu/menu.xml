@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/home_menu"
+        android:id="@+id/home"
+        android:title="Home" />
+
+    <item
+        android:icon="@drawable/icon_doa"
+        android:id="@+id/doa"
+        android:title="Doa-Doa" />
+
+    <item
+        android:icon="@drawable/icon_doa"
+        android:id="@+id/alquran"
+        android:title="Al-Quran" />
+
+    <item
+        android:icon="@drawable/icon_masjid"
+        android:id="@+id/masjid"
+        android:title="Masjid" />
+
+    <item
+        android:icon="@drawable/baseline_settings_24"
+        android:id="@+id/about"
+        android:title="Pengaturan" />
+</menu>
