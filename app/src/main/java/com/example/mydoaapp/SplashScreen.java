@@ -19,26 +19,18 @@ public class SplashScreen extends AppCompatActivity {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                try{
-                    Thread.sleep(3000); // Waktu Pnding 3 Detik
-                }catch(InterruptedException ex){
+                try {
+                    Thread.sleep(5000); // Waktu Pnding 5 Detik
+                } catch (InterruptedException ex) {
                     ex.printStackTrace();
-                }finally {
-                    SharedPreferences sharedPreferences = getSharedPreferences("Chech Login Belum", MODE_PRIVATE);
-                    String Token = sharedPreferences.getString("token","");
-
-                    if(Token != null){
-                        Toast.makeText(MainActivity.this,"Anda Sudah Login",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(SplashScreen.this, HomePage.class);
-                        startActivity(intent);
-                    }else{
-                        Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-                        startActivity(intent);
-                    }
+                } finally {
+                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                    startActivity(intent);
                 }
             }
         });
         thread.start();
         // end fungsi
+      }
+
     }
-}

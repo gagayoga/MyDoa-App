@@ -3,6 +3,7 @@ package com.example.mydoaapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Fragment3#newInstance} factory method to
@@ -23,6 +26,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class Fragment3 extends Fragment {
 
     FloatingActionButton button;
+
+    public static final String EXTRA_GAMBAR = "com.example.mydoaapp.EXTRA_GAMBAR";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -82,20 +87,29 @@ public class Fragment3 extends Fragment {
                 editor.apply();
                 Toast.makeText(getContext(), "Logout Berhasil", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getContext(), LoginActivity.class);
+                Intent intent = new Intent(getContext(), MainActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_GAMBAR, R.drawable.iconaplikasi);
-                intent.putExtra(intent.EXTRA_TEXT, "Baca doa sehari-hari lewat satu gengagaman aja buruan download sekarang !!!");
-                intent.setType("text/plaintext");
-                startActivity(Intent.createChooser(intent, "Share to :"));
+//                Intent intent = new Intent(Intent.ACTION_SEND);
+//                intent.putExtra(Intent.EXTR, R.drawable.iconaplikasi);
+//                intent.putExtra(intent.EXTRA_TEXT, "Baca doa sehari-hari lewat satu gengagaman aja buruan download sekarang !!!");
+//                intent.setType("text/plaintext");
+//                startActivity(Intent.createChooser(intent, "Share to :"));
+                ArrayList<Uri> imageUris = new ArrayList<Uri>();
+                imageUris.add(Uri.parse("android.resource://your.package.name/" + R.drawable.iconaplikasi)); // Add your image URIs here
+
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
+                shareIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, imageUris);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Baca doa sehari-hari lewat satu gengagaman aja buruan download sekarang !!!");
+                shareIntent.setType("image/*");
+                startActivity(Intent.createChooser(shareIntent, "Share to :"));
+
             }
         });
 

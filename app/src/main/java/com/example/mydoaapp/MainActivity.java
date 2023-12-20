@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         Login = findViewById(R.id.loginButton);
         btnRegister = findViewById(R.id.textRegister);
 
+        CheckLogin();
+
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,6 +190,17 @@ public class MainActivity extends AppCompatActivity {
                 usernameTxt.setText("");
                 passwordTxt.setText("");
             }
+        }
+    }
+
+    private void CheckLogin(){
+        SharedPreferences sharedPreferences = getSharedPreferences("Chech Login Belum", MODE_PRIVATE);
+        String Token = sharedPreferences.getString("token", "");
+
+        if (Token != null) {
+            Toast.makeText(MainActivity.this, "Anda Sudah Login", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, HomePage.class);
+            startActivity(intent);
         }
     }
 }
